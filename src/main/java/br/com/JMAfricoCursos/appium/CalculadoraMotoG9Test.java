@@ -36,4 +36,32 @@ public class CalculadoraMotoG9Test {
 	    
 	    driver.quit();
 	}
+	
+	@Test
+	public void enviarTextoWhatsap() throws MalformedURLException {	
+		
+		DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+	    desiredCapabilities.setCapability("platformName", "Android");
+	    desiredCapabilities.setCapability("deviceName", "0074578197");
+	    desiredCapabilities.setCapability("automationName", "UiAutomator2");
+	    desiredCapabilities.setCapability("appPackage", "com.whatsapp");
+	    //desiredCapabilities.setCapability("appActivity", "com.google.android.gsm.common.api.GoogleApiActivity");
+	    //desiredCapabilities.setCapability("appActivity", "com.whatsapp.HomeActivity");
+	    desiredCapabilities.setCapability("appActivity", "com.whatsapp.Conversation");
+	    
+	    URL remoteUrl = new URL("http://localhost:4723/wd/hub");
+	    
+		AndroidDriver<MobileElement> driver = new AndroidDriver<MobileElement>(remoteUrl, desiredCapabilities);
+		
+		MobileElement el1 = (MobileElement) driver.findElementById("com.whatsapp:id/whatsapp_toolbar_home");
+	    el1.click();
+	    MobileElement el2 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/android.widget.ListView/android.widget.RelativeLayout[5]/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.FrameLayout/android.widget.TextView");
+	    el2.click();
+	    MobileElement el3 = (MobileElement) driver.findElementById("com.whatsapp:id/entry");
+	    el3.click();
+	    el3.sendKeys("OI MORR");
+	 
+	    
+	    driver.quit();
+	}
 }
