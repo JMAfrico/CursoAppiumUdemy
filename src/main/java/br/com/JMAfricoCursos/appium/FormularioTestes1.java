@@ -15,7 +15,7 @@ import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
-public class FormularioTest {
+public class FormularioTestes1 {
 	
 	private AndroidDriver<MobileElement> driver;
 

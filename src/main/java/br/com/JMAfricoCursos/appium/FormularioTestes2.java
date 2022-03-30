@@ -1,28 +1,22 @@
 package br.com.JMAfricoCursos.appium;
 
 import java.net.MalformedURLException;
-import java.util.List;
-
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-
 import br.com.JMAfricoCursos.appium.core.DSL;
 import br.com.JMAfricoCursos.appium.core.DriverFactory;
 import io.appium.java_client.MobileBy;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
 
-public class FormularioTest2 {
+public class FormularioTestes2 {
 	
-	private AndroidDriver<MobileElement> driver;
 	private DSL dsl = new DSL();
 
 	@Before
 	public void setup() throws MalformedURLException {
-		driver = DriverFactory.getDriver();
+		
 	}
 	
 	@After
@@ -81,7 +75,7 @@ public class FormularioTest2 {
 		
 		dsl.clicar(By.xpath("//*[@text='SALVAR']"));
 		
-		Assert.assertEquals("Nome:João Marcos", "Nome:" + dsl.obterTexto(MobileBy.xpath("//android.widget.EditText[@text='Nome']")));
+		Assert.assertEquals("João Marcos",dsl.obterTexto(MobileBy.AccessibilityId("nome")));
 		
 		Assert.assertEquals("CONSOLE: PS4",dsl.obterTexto(By.xpath("//android.widget.TextView[ends-with(@text,'ps4')]")).toUpperCase());
 	
