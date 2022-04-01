@@ -4,11 +4,12 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import br.com.JMAfricoCursos.appium.core.DriverFactory;
+
+import br.com.JMAfricoCursos.appium.core.BaseTest;
 import br.com.JMAfricoCursos.appium.page.FormularioPage;
 import br.com.JMAfricoCursos.appium.page.MenuPage;
 
-public class FormularioTest {
+public class FormularioTest extends BaseTest{
 	
 	private MenuPage menuPage = new MenuPage();
 	private FormularioPage formPage = new FormularioPage();
@@ -16,11 +17,6 @@ public class FormularioTest {
 	@Before
 	public void setup(){
 		menuPage.acessarFormulario();
-	}
-	
-	@After
-	public void tearDown() {
-		DriverFactory.killDriver();
 	}
 	
 	@Test

@@ -2,7 +2,7 @@ package br.com.JMAfricoCursos.appium.core;
 
 import org.openqa.selenium.By;
 
-public class DSL {
+public class BasePage {
 
 	public void escrever(By by,String string) {		
 		DriverFactory.getDriver().findElement(by).sendKeys(string);
@@ -28,5 +28,4 @@ public class DSL {
 	public boolean isCheckboxMarcado(By by) {
 		return DriverFactory.getDriver().findElement(by).getAttribute("checked").equals("true");
 	}
-	
 }
