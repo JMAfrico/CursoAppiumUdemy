@@ -1,31 +1,41 @@
 package br.com.JMAfricoCursos.appium.core;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
+
+import io.appium.java_client.MobileElement;
 
 public class BasePage {
 
-	public void escrever(By by,String string) {		
+	protected void escrever(By by,String string) {		
 		DriverFactory.getDriver().findElement(by).sendKeys(string);
 	}
 	
-	public String obterTexto(By by) {
+	protected String obterTexto(By by) {
 		return DriverFactory.getDriver().findElement(by).getText();
 	}
 	
-	public void clicar(By by) {		
+	protected void clicar(By by) {		
 		DriverFactory.getDriver().findElement(by).click();
 	}
 	
-	public void clicarPorTexto(String texto) {		
+	protected void clicarPorTexto(String texto) {		
 		DriverFactory.getDriver().findElement(By.xpath("//*[@text='"+texto+"']")).click();
 	}
 	
-	public void clicarCombo(By by,String valor) {		
+	protected void clicarCombo(By by,String valor) {		
 		DriverFactory.getDriver().findElement(by).click();
 		clicarPorTexto(valor);
 	}
 	
-	public boolean isCheckboxMarcado(By by) {
+	protected boolean isCheckboxMarcado(By by) {
 		return DriverFactory.getDriver().findElement(by).getAttribute("checked").equals("true");
+	}
+	
+	protected boolean verificarSeExistePorTexto(String texto) {
+		//return DriverFactory.getDriver().findElement(By.xpath("//*[@text='"+texto+"'")).isDisplayed();
+		List<MobileElement> findElements = DriverFactory.getDriver().findElements(By.xpath("//*[@text='"+texto+"']"));
+		return findElements.size() > 0;
 	}
 }

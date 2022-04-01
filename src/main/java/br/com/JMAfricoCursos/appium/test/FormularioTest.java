@@ -1,10 +1,8 @@
 package br.com.JMAfricoCursos.appium.test;
 
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
 import br.com.JMAfricoCursos.appium.core.BaseTest;
 import br.com.JMAfricoCursos.appium.page.FormularioPage;
 import br.com.JMAfricoCursos.appium.page.MenuPage;
@@ -57,6 +55,9 @@ public class FormularioTest extends BaseTest{
 		formPage.clicarSwitc();
 		
 		formPage.clicarBtnSalvar();
+		//Thread.sleep(3000);
+		//WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(),10);
+		//wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text ='João Marcos']")));
 		
 		Assert.assertTrue(formPage.obterNomeCadastrado().contains((formPage.obterNome())));
 		Assert.assertEquals("Console: ps4", formPage.obterValorComboCadastrado());
