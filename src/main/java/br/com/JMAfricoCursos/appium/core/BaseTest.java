@@ -1,31 +1,26 @@
 package br.com.JMAfricoCursos.appium.core;
 
-import java.io.File;
-import java.io.IOException;
-import org.apache.commons.io.FileUtils;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.rules.TestName;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import junit.framework.TestResult;
 
 public class BaseTest {
 	
 	public Long start;
 	private Long end;
+	public static String getNomeMetodo;
 	
 	@Rule
 	public TestName testName = new TestName();
- 	public TestResult result = new TestResult();
  	
 	@Before
 	public void inicializandoClasse() {
 		start = System.currentTimeMillis();
 		System.out.println("\n----------AUTOMAÇÃO INICIADA----------");
-		System.out.println("----Iniciando execução do teste: " + testName.getMethodName());
+		System.out.println("----Iniciando execução do teste >>>>>> " + testName.getMethodName());		
+		getNomeMetodo = testName.getMethodName();
 	}
 
 	@After
@@ -34,7 +29,7 @@ public class BaseTest {
 		System.out.println("----Execução do teste: '" + testName.getMethodName() + "' Finalizada.");
 		System.out.println("----Duração do teste:" + (end - start)+"ms");
 		//Status();
-		getScreenShot();
+		//getScreenShot();
 		DriverFactory.getDriver().resetApp();
 	}
 
@@ -45,15 +40,15 @@ public class BaseTest {
 	}
 
 	
-	public void getScreenShot() {
-		File imagem = ((TakesScreenshot) DriverFactory.getDriver()).getScreenshotAs(OutputType.FILE);
-		try {
-			FileUtils.copyFile(imagem, new File("target/screenshots/" + testName.getMethodName() + ".png"));
-		} catch (IOException e) {
-			System.out.println(e.getMessage());
-			e.printStackTrace();
-		}
-	}
+//	public void getScreenShot() {
+//		File imagem = ((TakesScreenshot) DriverFactory.getDriver()).getScreenshotAs(OutputType.FILE);
+//		try {
+//			FileUtils.copyFile(imagem, new File("target/screenshots/" + testName.getMethodName() + ".png"));
+//		} catch (IOException e) {
+//			System.out.println(e.getMessage());
+//			e.printStackTrace();
+//		}
+//	}
 
 //	public void Status() {
 //		if (result.wasSuccessful()) {

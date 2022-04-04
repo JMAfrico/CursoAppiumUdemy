@@ -23,6 +23,5 @@ public class SplashTest extends BaseTest{
 		splashPage.isTelaSplashVisivel();
 		splashPage.esperaTelaSplashDesaparecer();
 		Assert.assertFalse(splashPage.isTelaSplashVisivel());
-	}
-	
+	}	
 }
