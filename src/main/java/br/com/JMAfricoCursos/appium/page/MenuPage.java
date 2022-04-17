@@ -26,4 +26,9 @@ public class MenuPage extends BasePage{
 		screenshotTest.getScreenShot("Clicar em 'Abas'");
 		clicarPorTexto("Abas");
 	}
+	
+	public void acessarAccordion() {
+		screenshotTest.getScreenShot("Clicar em 'Accordion'");
+		clicarPorTexto("Accordion");
+	}
 }

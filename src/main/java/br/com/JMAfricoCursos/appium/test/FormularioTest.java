@@ -64,4 +64,27 @@ public class FormularioTest extends BaseTest{
 		Assert.assertTrue(formPage.obterCheckCadastrado().endsWith("Marcado"));
 		Assert.assertTrue(formPage.obterSwichCadastrado().endsWith("Off"));
 	}
+	
+	@Test
+	public void deveAlterarData() {
+		formPage.clicarBtnData();
+		formPage.clicarDia("20");
+		formPage.clicarBtnOk();	
+		Assert.assertTrue(formPage.verificarSeExiste("20/01/2000"));
+	}
+	
+	@Test
+	public void deveAlterarHora() {
+		formPage.clicarBtnHora();
+		formPage.selecionarHora("10");
+		formPage.selecionarMinuto("45");
+		formPage.clicarBtnOk();	
+		Assert.assertTrue(formPage.verificarSeExiste("10:45"));
+	}
+	
+	@Test
+	public void deveMoverSeekbar() {
+		formPage.clicarSeekBar(0.60);
+		formPage.clicarBtnSalvar();	
+	}
 }
