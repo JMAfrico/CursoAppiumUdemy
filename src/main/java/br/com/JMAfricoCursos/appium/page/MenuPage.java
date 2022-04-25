@@ -31,4 +31,16 @@ public class MenuPage extends BasePage{
 		screenshotTest.getScreenShot("Clicar em 'Accordion'");
 		clicarPorTexto("Accordion");
 	}
+
+	public void acessarOpcaoBemEscondida() {
+		screenshotTest.getScreenShot("Clicar em 'Opção Bem escondida'");
+		AppiumSlideDown();
+		clicarPorTexto("Opção bem escondida");
+		
+	}
+
+	public void acessarSwipe() {
+		screenshotTest.getScreenShot("Clicar em 'Swipe'");
+		clicarPorTexto("Swipe");		
+	}
 }
