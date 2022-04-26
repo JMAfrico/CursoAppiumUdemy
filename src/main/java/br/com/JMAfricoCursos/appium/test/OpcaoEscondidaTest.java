@@ -17,7 +17,7 @@ public class OpcaoEscondidaTest extends BaseTest{
 	
 	@Before
 	public void acessarMenuOpcaoEscondida() {
-		menuPage.acessarOpcaoBemEscondida();
+		menuPage.clicarOpcaoBemEscondida();
 	}
 	
 	@Test

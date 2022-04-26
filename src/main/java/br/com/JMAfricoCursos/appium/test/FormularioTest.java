@@ -14,7 +14,7 @@ public class FormularioTest extends BaseTest{
 
 	@Before
 	public void setup(){
-		menuPage.acessarFormulario();
+		menuPage.clicarFormulario();
 	}
 	
 	@Test

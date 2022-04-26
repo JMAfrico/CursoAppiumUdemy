@@ -15,13 +15,13 @@ public class SplashTest extends BaseTest{
 	
 	@Before
 	public void devoAcessarMenuSplash() {
-		menuPage.acessarSplash();
+		menuPage.clicarSplash();
 	}
 	
 	@Test
 	public void deveAguardarSplashSumir() {
-		splashPage.isTelaSplashVisivel();
+		splashPage.validarTelaSplashVisivel();
 		splashPage.esperaTelaSplashDesaparecer();
-		Assert.assertFalse(splashPage.isTelaSplashVisivel());
+		Assert.assertFalse(splashPage.validarTelaSplashVisivel());
 	}	
 }

@@ -9,12 +9,13 @@ public class OpcaoEscondidaPage extends BasePage{
 	
 	public void clicarOk() {
 		screenshotTest.getScreenShot("Clicar em 'OK'");
-		clicarPorTexto("OK");	
+		String value = "OK";
+		clickByText(value);	
 	}
 	
 	public boolean validarMensagemSucesso() {
-		screenshotTest.getScreenShot("Validar Mensagem de sucesso");
-		return verificarSeExistePorTexto("Você achou essa opção");
-
+		screenshotTest.getScreenShot("Verificar se existe o texto 'Você achou essa opção' ");
+		String value = "Você achou essa opção";
+		return isExistByText(value);
 	}
 }

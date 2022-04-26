@@ -8,11 +8,16 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import br.com.JMAfricoCursos.appium.core.BasePage;
 import br.com.JMAfricoCursos.appium.core.DriverFactory;
+import br.com.JMAfricoCursos.appium.core.ScreenshotTest;
 
 public class SplashPage extends BasePage{
 
-	public boolean isTelaSplashVisivel() {
-		return verificarSeExistePorTexto("Splash!");
+	ScreenshotTest screenshotTest = new ScreenshotTest();
+	
+	public boolean validarTelaSplashVisivel() {
+		screenshotTest.getScreenShot("Verificar se existe o texto 'Splash' ");
+		String value = "Splash!";
+		return isExistByText(value);
 	}
 	
 	public void esperaTelaSplashDesaparecer() {

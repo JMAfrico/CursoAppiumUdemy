@@ -15,14 +15,13 @@ public class AccordionTest extends BaseTest{
 	
 	@Before
 	public void deveAcessarMenuAccordion() {
-		menuPage.acessarAccordion();
+		menuPage.clicarAccordion();
 	}
 	
 	@Test
 	public void deveValidarOpcaoUm(){
-		Assert.assertTrue(accordionPage.verificarSeExisteOpcaoUm());
+		Assert.assertTrue(accordionPage.validarExisteOpcaoUm());
 		accordionPage.clicarOpcaoUm();
-		//Assert.assertTrue(accordionPage.validarTextoOpcaoUm());
-		Assert.assertEquals("Esta é a descrição da opção 1", accordionPage.getTextoOpcaoUm());
+		Assert.assertTrue(accordionPage.validarTextOpcaoUm());
 	}
 }

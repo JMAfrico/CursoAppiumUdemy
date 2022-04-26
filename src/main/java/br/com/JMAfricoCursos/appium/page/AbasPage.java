@@ -9,21 +9,25 @@ public class AbasPage extends BasePage {
 	
 	public void clicarPrimeiraAba() {
 		screenshotTest.getScreenShot("Clicar em 'Aba 1'");
-		clicarPorTexto("Aba 1");	
+		String value = "Aba 1";
+		clickByText(value);	
 	}
 	
 	public void clicarSegundaAba() {
 		screenshotTest.getScreenShot("Clicar em 'Aba 2'");
-		clicarPorTexto("Aba 2");	
+		String value = "Aba 2";
+		clickByText(value);	
 	}
 
-	public boolean validarPrimeiraAbaSelecionada() {
-		screenshotTest.getScreenShot("Validar 'Aba 1' Selecionada");
-		return verificarSeExistePorTexto("Este é o conteúdo da Aba 1");
+	public boolean verificarPrimeiraAbaSelecionada() {
+		screenshotTest.getScreenShot("Verificar se existe o texto 'Este é o conteúdo da Aba 1' ");
+		String value = "Este é o conteúdo da Aba 1";
+		return isExistByText(value);		
 	}
 	
-	public boolean validarSegundaAbaSelecionada() {
-		screenshotTest.getScreenShot("Validar 'Aba 2' Selecionada");
-		return verificarSeExistePorTexto("Este é o conteúdo da Aba 2");
+	public boolean verificarSegundaAbaSelecionada() {
+		screenshotTest.getScreenShot("Verificar se existe o texto 'Este é o conteúdo da Aba 2' ");
+		String value = "Este é o conteúdo da Aba 2";
+		return isExistByText(value);
 	}
 }

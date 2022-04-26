@@ -7,40 +7,46 @@ public class MenuPage extends BasePage{
 	
 	private ScreenshotTest screenshotTest = new ScreenshotTest();
 	
-	public void acessarFormulario() {
-		screenshotTest.getScreenShot("Clicar em 'Formulário'");
-		clicarPorTexto("Formulário");
+	public void clicarFormulario() {
+		screenshotTest.getScreenShot("Clicar em 'Formulário' de menu");
+		String value = "Formulário";
+		clickByText(value);
 	}
 	
-	public void acessarSplash() {
-		screenshotTest.getScreenShot("Clicar em Splash'");
-		clicarPorTexto("Splash");
+	public void clicarSplash() {
+		screenshotTest.getScreenShot("Clicar em Splash' de menu");
+		String value = "Splash";
+		clickByText(value);
 	}
 	
-	public void acessarAlerta() {
-		screenshotTest.getScreenShot("Clicar em 'Alertas'");
-		clicarPorTexto("Alertas");
+	public void clicarAlerta() {
+		screenshotTest.getScreenShot("Clicar em 'Alertas' de menu");
+		String value = "Alertas";
+		clickByText(value);
 	}
 	
-	public void acessarAbas() {
-		screenshotTest.getScreenShot("Clicar em 'Abas'");
-		clicarPorTexto("Abas");
+	public void clicarAbas() {
+		screenshotTest.getScreenShot("Clicar em 'Abas' de menu");
+		String value = "Abas";
+		clickByText(value);
 	}
 	
-	public void acessarAccordion() {
-		screenshotTest.getScreenShot("Clicar em 'Accordion'");
-		clicarPorTexto("Accordion");
+	public void clicarAccordion() {
+		screenshotTest.getScreenShot("Clicar em 'Accordion' de menu");
+		String value = "Accordion";
+		clickByText(value);
 	}
 
-	public void acessarOpcaoBemEscondida() {
-		screenshotTest.getScreenShot("Clicar em 'Opção Bem escondida'");
-		AppiumSlideDown();
-		clicarPorTexto("Opção bem escondida");
-		
+	public void clicarOpcaoBemEscondida() {
+		screenshotTest.getScreenShot("Clicar em 'Opção Bem escondida' de menu");
+		String value = "Opção bem escondida";
+		appiumSlideDown();
+		clickByText(value);	
 	}
 
-	public void acessarSwipe() {
-		screenshotTest.getScreenShot("Clicar em 'Swipe'");
-		clicarPorTexto("Swipe");		
+	public void clicarSwipe() {
+		screenshotTest.getScreenShot("Clicar em 'Swipe' de menu");
+		String value = "Swipe";
+		clickByText(value);		
 	}
 }

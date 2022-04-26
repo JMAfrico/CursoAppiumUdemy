@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static br.com.JMAfricoCursos.appium.core.BasePage.esperar;
+import static br.com.JMAfricoCursos.appium.core.BasePage.waitExplict;
 import br.com.JMAfricoCursos.appium.core.BaseTest;
 import br.com.JMAfricoCursos.appium.page.AlertaPage;
 import br.com.JMAfricoCursos.appium.page.MenuPage;
@@ -17,7 +17,7 @@ public class AlertaTest extends BaseTest{
 	
 	@Before
 	public void deveAcessarMenuAlerta() {
-		menuPage.acessarAlerta();
+		menuPage.clicarAlerta();
 	}
 	
 	@Test
@@ -30,13 +30,13 @@ public class AlertaTest extends BaseTest{
 		alertaPage.clicarAlertaConfirmar();
 		alertaPage.clicarConfirmarOperacao();
 		Assert.assertTrue(alertaPage.validarAlertaConfirmado());
-		alertaPage.clicarEmSair();
+		alertaPage.clicarSair();
 	}
 	
 	@Test
 	public void deveClicarForaAlertaSimples() {
 		alertaPage.clicarAlertaSimples();
-		esperar(2000);
+		waitExplict(2000);
 		alertaPage.clicarForaDoAlerta();
 		Assert.assertFalse(alertaPage.validarMensagemInfoAlertaSimples());
 	}
@@ -44,7 +44,7 @@ public class AlertaTest extends BaseTest{
 	@Test
 	public void deveConfirmarAlertaRestritivo() {
 		alertaPage.clicarAlertaRestritivo();
-		alertaPage.clicarEmOk();
+		alertaPage.clicarOk();
 		Assert.assertTrue(alertaPage.validarAlertaConfirmado());
 	}
 }

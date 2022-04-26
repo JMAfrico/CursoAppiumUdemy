@@ -9,51 +9,60 @@ public class AlertaPage extends BasePage{
 
 	public void clicarAlertaConfirmar() {	
 		screenshotTest.getScreenShot("Clicar em 'Alerta Confirm'");
-		clicarPorTexto("ALERTA CONFIRM");
+		String value = "ALERTA CONFIRM";
+		clickByText(value);
 	}
 	
 	public void clicarAlertaSimples() {	
 		screenshotTest.getScreenShot("Clicar em 'Alerta Simples'");
-		clicarPorTexto("ALERTA SIMPLES");
+		String value = "ALERTA SIMPLES";
+		clickByText(value);
 	}
 	
 	public void clicarAlertaRestritivo() {	
 		screenshotTest.getScreenShot("Clicar em 'Alerta Restritivo'");
-		clicarPorTexto("ALERTA RESTRITIVO");
+		String value = "ALERTA RESTRITIVO";
+		clickByText(value);
 	}
 
 	public void clicarConfirmarOperacao() {
 		screenshotTest.getScreenShot("Clicar em 'Confirmar'");
-		clicarPorTexto("CONFIRMAR");		
+		String value = "CONFIRMAR";
+		clickByText(value);		
 	}
 	
-	public void clicarEmOk() {
+	public void clicarOk() {
 		screenshotTest.getScreenShot("Clicar em 'Ok'");
-		clicarPorTexto("OK");		
+		String value = "OK";
+		clickByText(value);		
 	}
 
 	public boolean validarAlertaConfirmado() {
-		screenshotTest.getScreenShot("Validar Alerta 'Confirmado'");
-		return verificarSeExistePorTexto("Confirmado");
+		screenshotTest.getScreenShot("Verificar se existe o texto 'Confirmado' ");
+		String value = "Confirmado";
+		return isExistByText(value);
 	}
 	
 	public boolean validarTextAlertaRestritivo() {
-		screenshotTest.getScreenShot("Validar Alerta 'Confirmado'");
-		return verificarSeExistePorTexto("ALERTA RESTRITIVO");
+		screenshotTest.getScreenShot("Verificar se existe o texto 'ALERTA RESTRITIVO' ");
+		String value = "ALERTA RESTRITIVO";
+		return isExistByText(value);
 	}
 
-	public void clicarEmSair() {
+	public void clicarSair() {
 		screenshotTest.getScreenShot("Clicar em 'Sair'");
-		clicarPorTexto("SAIR");
+		String value = "SAIR";
+		clickByText(value);
 	}
 
 	public void clicarForaDoAlerta() {
 		screenshotTest.getScreenShot("Clicar fora do alerta");
-		clicarPorCoordenadas(100,150);		
+		clickByCoordenadas(100,150);		
 	}
 	
 	public boolean validarMensagemInfoAlertaSimples() {
-		screenshotTest.getScreenShot("Verificar se existe");
-		return verificarSeExistePorTexto("Pode clicar no OK ou fora da caixa para sair");
+		screenshotTest.getScreenShot("Verificar se existe o texto 'Pode clicar no OK ou fora da caixa para sair' ");
+		String value = "Pode clicar no OK ou fora da caixa para sair";
+		return isExistByText(value);
 	}
 }

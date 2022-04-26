@@ -15,17 +15,21 @@ public class SwipeTest extends BaseTest{
 	
 	@Before
 	public void acessarMenuSwipe() {
-		menuPage.acessarSwipe();
+		menuPage.clicarSwipe();
 	}
 	
 	@Test
 	public void arrastarParaEsquerdaEDireita() {
 
+		Assert.assertTrue(swipePage.verificarTextoPaginaUm());
 		swipePage.moverParaLadoDireito();
 		
+		Assert.assertTrue(swipePage.verificarTextoPaginaDois());
 		swipePage.moverParaLadoDireito();
 		
-		swipePage.moverParaLadoEsquerdo();
+		Assert.assertTrue(swipePage.verificarTextoPaginaTres());
+		swipePage.moverParaLadoEsquerdo();		
 		
+		Assert.assertTrue(swipePage.verificarTextoPaginaDois());
 	}
 }

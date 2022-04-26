@@ -15,18 +15,18 @@ public class AbasTest extends BaseTest{
 
 	@Before
 	public void acessarMenuAbas() {
-		menuPage.acessarAbas();
+		menuPage.clicarAbas();
 	}
 	
 	@Test
 	public void deveAcessarPrimeiraAba() {
 		abasPage.clicarPrimeiraAba();
-		Assert.assertTrue(abasPage.validarPrimeiraAbaSelecionada());
+		Assert.assertTrue(abasPage.verificarPrimeiraAbaSelecionada());
 	}
 	
 	@Test
 	public void deveAcessarSegundaAba() {
 		abasPage.clicarSegundaAba();
-		Assert.assertTrue(abasPage.validarSegundaAbaSelecionada());
+		Assert.assertTrue(abasPage.verificarSegundaAbaSelecionada());
 	}
 }
