@@ -26,12 +26,12 @@ public class SwipePage extends BasePage{
 	}
 	
 	public void moverParaLadoEsquerdo() {
-		screenshotTest.getScreenShot("Slide para esquerda");
+		screenshotTest.getScreenShot("Slide para 'esquerda'");
 		appiumSwipeLeft();
 	}
 	
 	public void moverParaLadoDireito() {
-		screenshotTest.getScreenShot("Slide para direita");
+		screenshotTest.getScreenShot("Slide para 'direita'");
 		appiumSwipeRight();
 	}
 }

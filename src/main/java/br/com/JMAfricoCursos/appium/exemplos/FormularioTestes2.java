@@ -1,4 +1,4 @@
-package br.com.JMAfricoCursos.appium;
+package br.com.JMAfricoCursos.appium.exemplos;
 
 import java.net.MalformedURLException;
 import org.junit.After;

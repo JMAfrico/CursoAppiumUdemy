@@ -17,7 +17,7 @@ public class BasePage {
 	
 	protected String getText(By by) {
 		return DriverFactory.getDriver().findElement(by).getText();
-	}
+	}	
 	
 	protected void clickElement(By by) {		
 		DriverFactory.getDriver().findElement(by).click();
@@ -85,6 +85,27 @@ public class BasePage {
 	
 	protected void appiumSwipeRight() {
 		appiumSwipe(0.9,0.1);
+	}
+	
+	private void appiumSwipeElement(MobileElement element, double inicio , double fim) {		
+		int y = element.getLocation().y + (element.getSize().height/2);
+		
+		int x_inicial = (int) (element.getSize().width * inicio);
+		int x_final = (int) (element.getSize().width * fim);
+		
+		new TouchAction<>(DriverFactory.getDriver())
+        .longPress(PointOption.point(x_inicial,y))
+        .moveTo(PointOption.point(x_final,y))
+        .release()
+        .perform();
+	}
+	
+	protected void appiumSwipeLeftElement(MobileElement element) {
+		appiumSwipeElement(element,0.9,0.1);
+	}
+
+	protected void appiumSwipeRightElement(MobileElement element) {
+		appiumSwipeElement(element,0.9,0.1);
 	}
 	
 	public static void waitExplict(int time) {
