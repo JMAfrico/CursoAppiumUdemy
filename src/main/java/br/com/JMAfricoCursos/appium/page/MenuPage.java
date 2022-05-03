@@ -71,4 +71,18 @@ public class MenuPage extends BasePage{
 		appiumSlideDown();
 		clickByText(value);		
 	}
+	
+	public void clicarSeuBarrigaHibrido() {
+		String step = "Clicar em 'Seu barriga híbrido' de menu"; 
+		screenshotTest.getScreenShot(step);
+		String value = "SeuBarriga Híbrido";
+		clickByText(value);		
+	}
+	
+	public void clicarSeuBarrigaNativo() {
+		String step = "Clicar em 'Seu barriga nativo' de menu"; 
+		screenshotTest.getScreenShot(step);
+		String value = "SeuBarriga Nativo";
+		clickByText(value);		
+	}
 }

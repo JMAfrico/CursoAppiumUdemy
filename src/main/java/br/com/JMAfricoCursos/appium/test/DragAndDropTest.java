@@ -14,9 +14,9 @@ public class DragAndDropTest extends BaseTest{
 	MenuPage menuPage = new MenuPage();
 	DragAndDropPage dragAndDropPage = new DragAndDropPage();
 	
-	private String[] estadoInicial = new String[] {"Esta", "é uma lista", "Drag em Drop!", "Faça um clique longo,", "e arraste para", "qualquer local desejado."};
-	private String[] estadoIntermediario = new String[] {"e arraste para", "é uma lista", "Drag em Drop!", "Faça um clique longo,", "Esta", "qualquer local desejado."};
-	private String[] estadoFinal = new String[] {"e arraste para", "Faça um clique longo,", "Drag em Drop!", "é uma lista", "Esta", "qualquer local desejado."};
+	private String[] estadoInicial = new String[] {"Esta","é uma lista", "Drag em Drop!", "Faça um clique longo,", "e arraste para", "qualquer local desejado."};
+	private String[] estadoIntermediario = new String[] {"é uma lista", "Drag em Drop!", "Faça um clique longo,", "e arraste para" , "Esta", "qualquer local desejado."};
+	private String[] estadoFinal = new String[] {"Faça um clique longo,","é uma lista","Drag em Drop!","e arraste para", "Esta", "qualquer local desejado."};
 
 	
 	@Before
